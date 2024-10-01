@@ -36,7 +36,7 @@ function Layout({ title, children, onArrowBack }: Props) {
         </div>
       </div>
       <div
-        className="hidden h-full flex-1 flex-col justify-start pl-[10%] pt-[10%] md:flex "
+        className="hidden h-screen flex-1 flex-col justify-start pl-[3%] lg:pl-[10%] pt-[10%] md:flex "
         style={styles}
       >
         <div className="text-white">
@@ -47,11 +47,12 @@ function Layout({ title, children, onArrowBack }: Props) {
           </h3>
         </div>
         <div
-          style={{
-            background: `url('/assets/login.png')`
-          }}
-          className="flex h-full bg-red-500 bg-cover p-5 "
-        ></div>
+          className={
+            'w-full overflow-hidden hidden lg:block aspect-square  flex-1'
+          }
+        >
+          <img src={'/assets/loginCover.png'} className="w-full h-full" />
+        </div>
       </div>
     </div>
   )

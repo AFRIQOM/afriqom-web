@@ -81,16 +81,25 @@ const PreviewDashboard = () => {
           </Dropdown>
         </div>
       </div>
-      <div className={'w-full mb-10'}>
+      <div
+        className={
+          'w-full h-[calc(100vh-100px)] bg-surface-secondary relative mb-10 pb-0'
+        }
+      >
         {currentBoard && (
           <iframe
+            style={{
+              position: 'absolute',
+              clipPath: 'inset(0px 0px 40px 0px)'
+            }}
+            id={'dashboard-frame'}
             key={theme}
             src={
               (currentBoard as any)[
                 `${currentBoard.license!.toLowerCase()}_${theme}_databoard_url`
               ] as any
             }
-            className={'h-screen w-full bg-surface-secondary'}
+            className={'h-full w-screen bg-surface-secondary'}
           />
         )}
       </div>
